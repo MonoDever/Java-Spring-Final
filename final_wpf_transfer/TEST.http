@@ -1,0 +1,107 @@
+@ServerUrl = http://localhost:8097
+
+
+GET {{ServerUrl}}/api/customer
+
+###
+POST {{ServerUrl}}/api/customer/Customers
+Content-Type: application/json
+
+# {
+# "searchType" : "customername",
+# "searchValue" : "กิตติ"
+# }
+
+{
+"searchType" : "citizen",
+"searchValue" : "1100800745551"
+}
+
+# {
+# "searchType" : "passport",
+# "searchValue" : "AA1234567"
+# }
+
+###
+
+
+###
+GET {{ServerUrl}}/api/bank
+
+###
+GET {{ServerUrl}}/api/bank/list_bank
+
+###
+GET {{ServerUrl}}/api/runningid
+
+###
+GET {{ServerUrl}}/api/runningid/get_running_id
+
+###
+GET {{ServerUrl}}/api/log
+
+###
+POST {{ServerUrl}}/api/log/add_log_activity
+Content-Type: application/json
+
+{
+    "actType": 1,
+    "actDate": "2021-08-25",
+    "actDetail": "SearchCustomer",
+    "actFullDetail": "testadmin",
+    "userId": "11358",
+    "comName":"somjai",
+    "tranId":106788,
+    "tranType":95,
+    "tranCode":"SMTR0001",
+    "tranBankFrom":"SMTR",
+    "tranBankTo":"BBL",
+    "memo":"โอนให้เพื่อน",
+    "errCode":"0000",
+    "errDesc":"success",
+    "actStatus":1,
+    "pageCode":"PAGE001",
+    "pageName":"Transfer"
+}
+
+###
+POST {{ServerUrl}}/api/log/add_log_transaction
+Content-Type: application/json
+
+{
+    "tranDate":"2021-08-25",
+    "tranCode":"SMTR0002",
+    "tranType":95,
+    "custId":"52adb621-1c5c-4f69-b4eb-4cd103f8f92b",
+    "cifId":null,
+    "mobileNo":"0818116782",
+    "fromBankCode":"950",
+    "fromAccType":11,
+    "fromAccNo":"950102002557001",
+    "fromAccNickName":"k_wallet_1",
+    "fromAccName":"k_wallet_1",
+    "toBankCode":"950",
+    "toAccType":11,
+    "toAccNo":"9501020000022453",
+    "toAccNickName":null,
+    "toAccName":null,
+    "fee1":0.00,
+    "amount":100.00,
+    "currencyCode":"POINT",
+    "tranStatus":1,
+    "memo":"โอนให้เพื่อน",
+    "errCode":"0000",
+    "errDesc":"Success"
+}
+
+
+###
+
+###
+GET {{ServerUrl}}/api/smsregister
+
+###
+POST {{ServerUrl}}/api/smsregister/add_smsregister?request=5
+Content-Type: application/json
+
+
